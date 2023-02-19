@@ -4,15 +4,15 @@ fetch("http://localhost:3000/api/products/")
       return response.json();
     }
   })
-  .then((data) => retriveApiContent(data))
+  .then((data) => retrieveApiContent(data))
   .catch((err) =>
     console.log(
-      "Erreur de réception de données, veuillez verifier si le serveur a bien été demarrer"
+      "Erreur de réception de données, veuillez verifier si le serveur a bien été demarré"
     )
   );
 
-function retriveApiContent(productList) {
-  for (const product of productList) {
+function retrieveApiContent(productsList) {
+  for (const product of productsList) {
     const link = document.querySelector("#items");
     link.innerHTML += `
          <a href="./product.html?id=${product._id}">
