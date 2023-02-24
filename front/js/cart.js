@@ -1,7 +1,13 @@
 let cart = JSON.parse(localStorage.getItem("orders"));
-cart.sort((e1, e2) => {
-  return e1.productId < e2.productId ? -1 : e1.productId > e2.productId ? 1 : 0;
-});
+sortItems(cart);
+//Trie puis regroupe  les articles.
+function sortItems(cart) {
+    cart.sort((e1, e2) => {
+      return e1.productId < e2.productId ? -1 : e1.productId > e2.productId ? 1 : 0;
+    });
+    return cart;
+}
+// Récupère les données de l'API.
 async function retrieveData() {
     let totalCartPrice = 0;
     for (const order of cart) {
@@ -24,6 +30,7 @@ async function retrieveData() {
     submitForm();
 }
 retrieveData();
+//Affiche les données de la page.
 function displayCart(data, order) {
     const section = document.querySelector("#cart__items");
     section.innerHTML += `<article class="cart__item" data-id="${order.productId}" data-color="${order.color}">
@@ -48,7 +55,7 @@ function displayCart(data, order) {
                     </div>
                 </article>`;
 }
-
+//Affiche le nombre total d'article.
 function displayTotalOrderQuantity() {
     let totalOrderQuantity = 0;
     const totalQuantity = document.querySelector("#totalQuantity");
@@ -58,7 +65,7 @@ function displayTotalOrderQuantity() {
     });
     totalQuantity.innerText = totalOrderQuantity;
 }
-
+//Modifie le nombre de produits choisis.
 function adjustItemQuantity() {
     let inputs = document.querySelectorAll(".itemQuantity");
     inputs.forEach((input) => {
@@ -67,7 +74,7 @@ function adjustItemQuantity() {
         });
     });
 }
-
+//Ajuste le nombre total d'article et le prix total du panier.
 function adjustTotalQuantityAndTotalCartPrice(input) {
     const article = input.closest("article");
     const id = article.dataset.id;
@@ -82,6 +89,7 @@ function adjustTotalQuantityAndTotalCartPrice(input) {
     retrieveData();
     location.reload();
 }
+//supprime un produit.
 function removeItem() {
     let paragraphs = document.querySelectorAll(".deleteItem");
     paragraphs.forEach((paragraph) => {
@@ -100,14 +108,14 @@ function removeItem() {
         });
     });
 }
-
+//Soumet le formulaire
 function submitForm() {
     const submitButton = document.querySelector("#order");
     submitButton.addEventListener("click", (e) => {
         manageFormDatas(e);
     });
 }
-
+//Envoie les données saisies par l'utilisateur à L'API.
 function manageFormDatas(e) {
   e.preventDefault();
   if (cart.length === 0) {
@@ -136,7 +144,7 @@ function manageFormDatas(e) {
       .catch((err) => console.error(err));
   }
 }
-
+//Vérifie la validité des données saisies par l'utilisateur.
 function validateForm(data) {
     let retError = true;
 
@@ -180,7 +188,7 @@ function validateForm(data) {
     }
     return retError;
 }
-
+//crée le corps de la requête.
 function makeJsonBody() {
   const form = document.querySelector(".cart__order__form");
   const firstName = form.elements.firstName.value;
@@ -200,7 +208,7 @@ function makeJsonBody() {
   };
   return jsonBody;
 }
-
+//Crée le tableau de string (Id).
 function getIdFromStorage() {
   let ids = [];
   cart.forEach((order) => {
@@ -208,6 +216,7 @@ function getIdFromStorage() {
   });
   return ids;
 }
+//Redirige vers la page de confirmation
 function redirectToConfirmation(orderId) {
   window.location.href = `./confirmation.html?orderId=${orderId}`;
 }
