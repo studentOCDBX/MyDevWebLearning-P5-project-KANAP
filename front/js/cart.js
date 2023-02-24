@@ -30,6 +30,7 @@ async function retrieveData() {
     submitForm();
 }
 retrieveData();
+
 //Affiche les données de la page.
 function displayCart(data, order) {
     const section = document.querySelector("#cart__items");
@@ -55,6 +56,7 @@ function displayCart(data, order) {
                     </div>
                 </article>`;
 }
+
 //Affiche le nombre total d'article.
 function displayTotalOrderQuantity() {
     let totalOrderQuantity = 0;
@@ -65,6 +67,7 @@ function displayTotalOrderQuantity() {
     });
     totalQuantity.innerText = totalOrderQuantity;
 }
+
 //Modifie le nombre de produits choisis.
 function adjustItemQuantity() {
     let inputs = document.querySelectorAll(".itemQuantity");
@@ -74,6 +77,7 @@ function adjustItemQuantity() {
         });
     });
 }
+
 //Ajuste le nombre total d'article et le prix total du panier.
 function adjustTotalQuantityAndTotalCartPrice(input) {
     const article = input.closest("article");
@@ -89,6 +93,7 @@ function adjustTotalQuantityAndTotalCartPrice(input) {
     retrieveData();
     location.reload();
 }
+
 //supprime un produit.
 function removeItem() {
     let paragraphs = document.querySelectorAll(".deleteItem");
@@ -108,6 +113,7 @@ function removeItem() {
         });
     });
 }
+
 //Soumet le formulaire
 function submitForm() {
     const submitButton = document.querySelector("#order");
@@ -115,6 +121,7 @@ function submitForm() {
         manageFormDatas(e);
     });
 }
+
 //Envoie les données saisies par l'utilisateur à L'API.
 function manageFormDatas(e) {
   e.preventDefault();
@@ -144,6 +151,7 @@ function manageFormDatas(e) {
       .catch((err) => console.error(err));
   }
 }
+
 //Vérifie la validité des données saisies par l'utilisateur.
 function validateForm(data) {
     let retError = true;
@@ -188,6 +196,7 @@ function validateForm(data) {
     }
     return retError;
 }
+
 //crée le corps de la requête.
 function makeJsonBody() {
   const form = document.querySelector(".cart__order__form");
@@ -208,6 +217,7 @@ function makeJsonBody() {
   };
   return jsonBody;
 }
+
 //Crée le tableau de string (Id).
 function getIdFromStorage() {
   let ids = [];
@@ -216,6 +226,7 @@ function getIdFromStorage() {
   });
   return ids;
 }
+
 //Redirige vers la page de confirmation
 function redirectToConfirmation(orderId) {
   window.location.href = `./confirmation.html?orderId=${orderId}`;
