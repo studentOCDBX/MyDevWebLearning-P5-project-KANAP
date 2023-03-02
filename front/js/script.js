@@ -1,3 +1,7 @@
+/**
+ * Send custom request using fetch api
+ * @return {Promise}
+ */
 fetch("http://localhost:3000/api/products/")
   .then(function (response) {
     if (response.ok) {
@@ -10,7 +14,10 @@ fetch("http://localhost:3000/api/products/")
       "Erreur de réception de données, veuillez verifier si le serveur a bien été demarré"
     )
   );
-
+/**
+ * Display all Product of the productslist
+ * @param {*} productsList - Array
+ */
 function retrieveApiContent(productsList) {
   for (const product of productsList) {
     const link = document.querySelector("#items");

@@ -1,13 +1,20 @@
 let cart = JSON.parse(localStorage.getItem("orders"));
 sortItems(cart);
-//Trie puis regroupe  les articles.
+/**
+ * Sort Product by color 
+ * @param {array} cart - Array of object
+ * @returns 
+ */
 function sortItems(cart) {
     cart.sort((e1, e2) => {
       return e1.productId < e2.productId ? -1 : e1.productId > e2.productId ? 1 : 0;
     });
     return cart;
 }
-// Récupère les données de l'API.
+/**
+ * Send custom request using fetch api
+ * @return {Promise}
+ */
 async function retrieveData() {
     let totalCartPrice = 0;
     for (const order of cart) {
@@ -31,7 +38,11 @@ async function retrieveData() {
 }
 retrieveData();
 
-//Affiche les données de la page.
+/**
+ * Dysplays the cart and its contents
+ * @param {object array} data -Api content data
+ * @param {object} order -Selected product
+ */
 function displayCart(data, order) {
     const section = document.querySelector("#cart__items");
     section.innerHTML += `<article class="cart__item" data-id="${order.productId}" data-color="${order.color}">
@@ -57,7 +68,10 @@ function displayCart(data, order) {
                 </article>`;
 }
 
-//Affiche le nombre total d'article.
+/**
+ * Display the total quantity of orders
+ * @return {Number} 
+ */
 function displayTotalOrderQuantity() {
     let totalOrderQuantity = 0;
     const totalQuantity = document.querySelector("#totalQuantity");
@@ -68,7 +82,9 @@ function displayTotalOrderQuantity() {
     totalQuantity.innerText = totalOrderQuantity;
 }
 
-//Modifie le nombre de produits choisis.
+/**
+ * Adjust the selected products number
+ */
 function adjustItemQuantity() {
     let inputs = document.querySelectorAll(".itemQuantity");
     inputs.forEach((input) => {
@@ -78,7 +94,10 @@ function adjustItemQuantity() {
     });
 }
 
-//Ajuste le nombre total d'article et le prix total du panier.
+/**
+ * Adjust total product count and total cart price
+ * @param {Number} input  dataset.id and data.set color element
+ */
 function adjustTotalQuantityAndTotalCartPrice(input) {
     const article = input.closest("article");
     const id = article.dataset.id;
@@ -94,7 +113,9 @@ function adjustTotalQuantityAndTotalCartPrice(input) {
     location.reload();
 }
 
-//supprime un produit.
+/**
+ * Remove a selected product
+ */
 function removeItem() {
     let paragraphs = document.querySelectorAll(".deleteItem");
     paragraphs.forEach((paragraph) => {
@@ -114,7 +135,9 @@ function removeItem() {
     });
 }
 
-//Soumet le formulaire
+/**
+ * Submit the user form
+ */
 function submitForm() {
     const submitButton = document.querySelector("#order");
     submitButton.addEventListener("click", (e) => {
@@ -122,7 +145,11 @@ function submitForm() {
     });
 }
 
-//Envoie les données saisies par l'utilisateur à L'API.
+/**
+ * Send user data to api
+ * @param {Event} e - Mouse event
+ * @returns 
+ */
 function manageFormDatas(e) {
   e.preventDefault();
   if (cart.length === 0) {
@@ -152,8 +179,11 @@ function manageFormDatas(e) {
   }
 }
 
-//Vérifie la validité des données saisies par l'utilisateur.
-function validateForm(data) {
+/**
+ * Cheks the user datas validity
+ * @return {boolean} retError
+ */
+function validateForm() {
     let retError = true;
 
     //Validate firstName
@@ -197,7 +227,10 @@ function validateForm(data) {
     return retError;
 }
 
-//crée le corps de la requête.
+/**
+ *  Make the request body
+ * @return {Json}
+ */
 function makeJsonBody() {
   const form = document.querySelector(".cart__order__form");
   const firstName = form.elements.firstName.value;
@@ -218,7 +251,10 @@ function makeJsonBody() {
   return jsonBody;
 }
 
-//Crée le tableau de string (Id).
+/**
+ * Make the ids array
+ * @return {[id]}
+ */
 function getIdFromStorage() {
   let ids = [];
   cart.forEach((order) => {
@@ -227,7 +263,10 @@ function getIdFromStorage() {
   return ids;
 }
 
-//Redirige vers la page de confirmation
+/**
+ * Redirect to confirmation page
+ * @param {String} orderId - the user order id
+ */
 function redirectToConfirmation(orderId) {
   window.location.href = `./confirmation.html?orderId=${orderId}`;
 }
