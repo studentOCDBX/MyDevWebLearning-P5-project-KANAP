@@ -1,8 +1,10 @@
 # **MyDevWebLearning-P5-project: Kanap**
 
 Cinquième projet du parcours "Développeur web" chez OpenClassroom. L'objectif de ce projet est de construire un site e-commerce en JavaScript.
-Vous trouverez [le brief complet du projet](https://openclassrooms.com/fr/paths/556/projects/675/assignment) ici.</br>
-Vous trouverez [les specifications fonctionelles et techniques du projet](https://course.oc-static.com/projects/DWJ_FR_P5/DW+P5+-+Specifications+fonctionnelles.pdf) ici.
+Vous trouverez [le brief complet du projet](https://openclassrooms.com/fr/paths/556/projects/675/assignment) ici.
+<br>
+Vous trouverez [les specifications fonctionnelles et techniques du projet](https://course.oc-static.com/projects/DWJ_FR_P5/DW+P5+-+Specifications+fonctionnelles.pdf) ici.
+
 
 #
 ## <ins> Objectifs </ins>
