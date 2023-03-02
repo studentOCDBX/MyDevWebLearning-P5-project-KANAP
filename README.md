@@ -1,8 +1,8 @@
 # **MyDevWebLearning-P5-project: Kanap**
 
 Cinquième projet du parcours "Développeur web" chez OpenClassroom. L'objectif de ce projet est de construire un site e-commerce en JavaScript.
-Vous trouverez [le brief complet du projet](https://openclassrooms.com/fr/paths/556/projects/675/assignment) ici.<br>
-Vous trouverez [les specifications fonctionnelles et techniques du projet](https://course.oc-static.com/projects/DWJ_FR_P5/DW+P5+-+Specifications+fonctionnelles.pdf) ici.
+Vous trouverez [le brief complet du projet](https://openclassrooms.com/fr/paths/556/projects/675/assignment) ici.</br>
+Vous trouverez [les specifications fonctionelles et techniques du projet](https://course.oc-static.com/projects/DWJ_FR_P5/DW+P5+-+Specifications+fonctionnelles.pdf) ici.
 
 #
 ## <ins> Objectifs </ins>
@@ -19,6 +19,7 @@ Vous trouverez [les specifications fonctionnelles et techniques du projet](https
 <p align="center">
   <img width="400" height="1118" src="front/images/visuels/screencapture-front-html-product-html.jpeg" title="Visuel de la page produit">
 </p> </br>&nbsp;
+
 <p align="center">
   <img width="400" height="1118" src="front/images/visuels/screencapture-front-html-cart-html.jpeg" title="Visuel de la page panier">
 </p> </br>&nbsp;
@@ -34,12 +35,14 @@ Vous trouverez [les specifications fonctionnelles et techniques du projet](https
   </br>
 - Un document PDF du plan de test.
 
-### Back end Prerequisites
+## <ins>Faire tourner le projet</ins> </br>&nbsp;
+### <ins>Prérequis back-end</ins>
 
-You will need to have Node and `npm` installed locally on your machine.
-## <ins>Pour faire tourner le projet</ins> </br>&nbsp;
 
-### Installation du Back end 
+Vous aurez besoin d'avoir Node et `npm` installés localement sur votre machine.
+
+### <ins>Installation du Back end </ins>
+
 
 Clonez ce dépôt. Depuis le dossier "back" du projet, exécutez `npm install`. Vous pourrez alors demarrer le serveur avec `node server`.
 Le serveur doit fonctionner sur `localhost` avec le port par défaut `3000`.
