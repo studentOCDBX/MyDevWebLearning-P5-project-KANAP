@@ -1,6 +1,36 @@
 # **MyDevWebLearning-P5-project: Kanap**
 
 Cinquième projet du parcours "Développeur web" chez OpenClassroom. L'objectif de ce projet est de construire un site e-commerce en JavaScript.
+Vous trouverez [le brief complet du projet](https://openclassrooms.com/fr/paths/556/projects/675/assignment) ici.
+
+#
+## <ins> Objectifs </ins>
+
+1. Créer un plan de test pour une application.
+2. Valider des données issues de sources externes.
+3. Interagir avec un web service avec JavaScript.
+4. Gérer des événements JavaScript
+## <ins>Aperçu du projet</ins> </br>&nbsp;
+
+<p align="center">
+  <img width="400" height="1118" src="front/images/visuels/screencapture-front-html-index-html.jpeg" title="Visuel de la page d'accueil">
+</p> </br>&nbsp;
+<p align="center">
+  <img width="400" height="1118" src="front/images/visuels/screencapture-front-html-product-html.jpeg" title="Visuel de la page produit">
+</p> </br>&nbsp;
+<p align="center">
+  <img width="400" height="1118" src="front/images/visuels/screencapture-front-html-cart-html.jpeg" title="Visuel de la page panier">
+</p> </br>&nbsp;
+<p align="center">
+  <img width="400" height="1118" src="front/images/visuels/screencapture-front-html-confirmation-html.jpeg" title="Visuel de la page de confirmation">
+</p> </br>&nbsp;
+
+
+
+## <ins> Livrables </ins>
+# **MyDevWebLearning-P5-project: Kanap**
+
+Cinquième projet du parcours "Développeur web" chez OpenClassroom. L'objectif de ce projet est de construire un site e-commerce en JavaScript.
 Vous trouverez [le brief complet du projet](https://openclassrooms.com/fr/paths/556/projects/675/assignment) ici.<br>
 Vous trouverez [les specifications fonctionnelles et techniques du projet](https://course.oc-static.com/projects/DWJ_FR_P5/DW+P5+-+Specifications+fonctionnelles.pdf) ici.
 
